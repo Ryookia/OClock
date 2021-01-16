@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/appLogo"
+            android:layout_width="@dimen/appLogoSize"
+            android:layout_height="@dimen/appLogoSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/end">
+        <Constraint android:id="@+id/appLogo"
+            android:layout_width="@dimen/appLogoSize"
+            android:layout_height="@dimen/appLogoSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </ConstraintSet>
+
+    <Transition
+        app:duration="700"
+        app:constraintSetEnd="@+id/end"
+        app:constraintSetStart="@+id/start">
+        <KeyFrameSet>
+            <KeyPosition
+                app:keyPositionType="deltaRelative"
+                app:percentY=".7"
+                app:framePosition="50"
+                app:motionTarget="@+id/appLogo"/>
+            <KeyPosition
+                app:keyPositionType="deltaRelative"
+                app:percentY=".9"
+                app:framePosition="75"
+                app:motionTarget="@+id/appLogo"/>
+            <KeyPosition
+                app:keyPositionType="deltaRelative"
+                app:percentY=".95"
+                app:framePosition="90"
+                app:motionTarget="@+id/appLogo"/>
+        </KeyFrameSet>
+    </Transition>
+</MotionScene>
